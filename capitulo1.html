@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script> <!-- Referência ao script.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(chapterId) {
+            localStorage.setItem("lastReadChapter", chapterId);
+            console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
+        }
+    </script>
+</head>
+<body>
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo1" -->
+    <div class="container capitulo" id="capitulo1">
+        <h1 class="chapter-number">Capítulo 1</h1>
+        <h2 class="chapter-title">10 de Janeiro de 2021</h2>
+        <p>Hoje é o décimo dia do ano, mal começou 2021 e as pessoas já estão desesperadas pela doce melodia que parece levemente tocar em seus ouvidos. Mal podemos compreender o que é que fala mais alto, mal podemos sentir o que se diz ser o mais eficiente nesse caso.</p>
+        <p>No começo disso tudo, mal sabíamos com o que estávamos lidando, porém, agora vejo junto aos olhos de quem vê, que nem por isso vai ficar. Em uma linda manhã nasce uma flor, e no mesmo dia, a mesma flor, em sua primeira noite da mesma manhã, se vai junto ao sol em seu primeiro e último pôr do sol desse mesmo dia.</p>
+        <p>As coisas simples deixam de ser simples para serem complexas aos olhos de quem vê o que não se pode ver, enquanto a vida deixa de ser vida quando a morte deixa de não ir vê-la em seu último dia de suspiro, assim como um parente distante deixa de vê-lo por não viver da mesma virtude em que vive você, assim como a água jorra até sua última gota com o propósito vital de nos abastecer até a seca total em seu verão caloroso, como a morte indo visitar a vida em uma linda manhã de domingo, como a água indo visitar a seca na mesma linda manhã de domingo, assim é e sempre será o mesmo eclipse cósmico de como a lua, em metáfora, visita o sol de seu planeta em sua última manhã de domingo.</p>
+        <p>Em quais leis nos encaixamos quando decidimos que matar é errado, mas mesmo assim matamos? Em quais lugares podemos estar, ou em quais ambientes podemos frequentar, quando se trata de não acreditar no que sai da boca de quem diz as meias verdades que queremos ouvir?</p>
+        <p>Será que estamos em lugares opostos? Acho que estamos no lugar em que deveríamos estar.</p>
+        <div class="buttons">
+            <button onclick="navigateTo('index.html')">Anterior</button>
+            <button onclick="navigateTo('indice.html')">Índice</button>
+            <button onclick="navigateTo('capitulo2.html')">Próximo</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

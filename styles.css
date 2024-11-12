@@ -1,0 +1,132 @@
+/* Configurações Globais */
+body {
+    font-family: 'Georgia', serif;
+    color: #444;
+    background: #f2f2f2;
+    line-height: 1.6em;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit; /* Todos os elementos herdam box-sizing do body */
+}
+
+/* Container Principal */
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1em;
+    overflow-x: hidden; /* Garante que nada "fuja" da tela horizontalmente */
+    text-align: center;
+}
+
+/* Estilo do Cabeçalho */
+h1 {
+    font-size: 2.2em;
+    color: #333;
+    margin-top: 2em;
+    word-wrap: break-word; /* Quebra automaticamente palavras longas */
+}
+
+/* Estilo dos Parágrafos */
+p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    margin: 1em 0;
+    text-align: justify;
+    text-indent: 2em;
+    word-wrap: break-word; /* Evita que palavras longas ultrapassem os limites da tela */
+    overflow-wrap: break-word; /* Quebra de palavras em dispositivos menores */
+}
+
+/* Estilo dos Botões */
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    gap: 10px; /* Espaço entre os botões */
+    flex-wrap: wrap; /* Garante que os botões sejam realinhados se não houver espaço suficiente */
+}
+
+.buttons button {
+    flex: 1; /* Todos os botões ocuparão proporcionalmente o mesmo espaço */
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    background: #666;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease; /* Animação mais rápida e suave */
+    max-width: calc(33% - 10px); /* Garante que três botões caibam lado a lado, menos o espaço entre eles */
+}
+
+.buttons button:hover {
+    background: #888;
+    transform: translateY(-3px); /* Efeito sutil ao passar o mouse */
+}
+
+.buttons button:active {
+    background: #444; /* Cor mais escura ao clicar no botão */
+}
+
+/* Estilos Para Imagens */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Adiciona bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
+}
+
+/* Estilos para Tornar o Design Responsivo */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em; /* Reduz o tamanho da fonte do título em telas menores */
+    }
+
+    .container {
+        padding: 1em; /* Reduz o padding em telas menores */
+    }
+
+    .buttons button {
+        font-size: 1em; /* Reduz o tamanho da fonte dos botões em telas menores */
+        max-width: 100%; /* Ajusta o botão para ocupar toda a largura disponível em telas menores */
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 80%;
+        padding: 30px;
+    }
+}
+
+/* Estilo do Número e Título do Capítulo */
+.chapter-number {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0.5em 0;
+}
+
+.chapter-title {
+    font-size: 1.5em;
+    font-weight: normal;
+    margin: 0.5em 0;
+    color: #5d5d5d; /* Adiciona uma cor mais suave ao título */
+}
+
+/* Adiciona uma sombra aos capítulos destacados */
+.chapter-list li.highlight {
+    background-color: #dff0d8; /* Verde sutil para destacar */
+    border-color: #a5d6a7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect para itens da lista de capítulos */
+.chapter-list li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 5</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script> <!-- Referência ao script.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(capituloId) {
+            localStorage.setItem("lastReadChapter", capituloId);
+            console.log("Capítulo salvo no localStorage:", capituloId); // Log para debug
+        }
+    </script>
+</head>
+<body>
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo5" -->
+    <div class="container capitulo" id="capitulo5">
+        <h1 class="capitulo-number">Capítulo 5</h1>
+        <h2 class="capitulo-title">14 de Janeiro de 2021</h2>
+        <p>Uma alegria passageira que contagia o nosso ser nos prova que o momento é o melhor que pode ser, quando na verdade esquecemos o fato de que uma felicidade momentânea se vai cedo, como a brisa do vento que vai e vem.</p>
+        <p>Uma história contada para uma mente inocente, que diz que é assim que tem que ser e que não há alternativas, como uma criança que cedo sai para a vida dos mais velhos, não por escolha própria, mas por necessidade, e naquilo que vê a oportunidade de se sentir menos responsável, e apenas sorrir feito uma criança que deveria ser, é naquilo que se firma e mesmo assim se perde nas sombras do caminho torto que em sua mente jamais iria se perder.</p>
+        <p>Nascer de novo não significa apenas uma nova vida, mas a oportunidade de fazer na mesma vida uma história diferente. Há aqueles que se deixam ir junto à maré agitada de uma tempestade sem fim, em um labirinto sem volta que teimam em se perder, e dão voltas e voltas sem achar seu ponto final. E há os que ainda acreditam no bem e na justiça, e usam o seu Deus como justificativa de suas causas perdidas.</p>
+        <p>Esses, sim, ainda podem olhar para o céu com esperança, de um tempo onde jamais houve, de uma vida onde jamais teve, de uma graça onde a tristeza não alcança. E assim como em contos de fadas, eles sempre terão fé no seu final feliz, não descansam para não fraquejar, até o verbo fechar o livro com “felizes para sempre”, e fim.</p>
+        <div class="buttons">
+            <button onclick="navigateTo('capitulo4.html')">Anterior</button>
+            <button onclick="navigateTo('indice.html')">Índice</button>
+            <button onclick="navigateTo('continua.html')">Próximo</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

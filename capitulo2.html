@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script> <!-- Referência ao script.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(chapterId) {
+            localStorage.setItem("lastReadChapter", chapterId);
+            console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
+        }
+    </script>
+</head>
+<body>
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo2" -->
+    <div class="container capitulo" id="capitulo2">
+        <h1 class="chapter-number">Capítulo 2</h1>
+        <h2 class="chapter-title">11 de Janeiro de 2021</h2>
+        <p>Às vezes a chave da porta que busca abrir não é a que vai encontrar, assim como o lugar em que almeja chegar não é o mais alto que pode alcançar.</p>
+        <p>Em dias sombrios e frios como este, é necessário renascer das chamas da ira que brota de dentro do peito do homem errado, não errado pelos seus atos, mas tão errado pelos seus fatos.</p>
+        <p>O que buscamos encontrar não é algo que vem de cima, muito menos que vem de baixo; não importa o que vem de fora, a verdade é que a vaidade do homem lhe mostra que o que devemos alcançar está tão fora do nosso alcance, assim como um tesouro perdido, uma pauta intocável, ou um valor incalculável somado apenas com o que vem do extremo externo do homem, quando na verdade o maior tesouro é o que se pode encontrar dentro de si, e em si, entre as pessoas que ama.</p>
+        <div class="buttons">
+            <button onclick="navigateTo('capitulo1.html')">Anterior</button>
+            <button onclick="navigateTo('indice.html')">Índice</button>
+            <button onclick="navigateTo('capitulo3.html')">Próximo</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

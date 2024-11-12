@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 4</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script> <!-- Referência ao script.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(capituloId) {
+            localStorage.setItem("lastReadChapter", capituloId);
+            console.log("Capítulo salvo no localStorage:", capituloId); // Log para debug
+        }
+    </script>
+</head>
+<body>
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo4" -->
+    <div class="container capitulo" id="capitulo4">
+        <h1 class="capitulo-number">Capítulo 4</h1>
+        <h2 class="capitulo-title">13 de Janeiro de 2021</h2>
+        <p>Tamanha ganância transforma o coração grande de um sonhador em pequeno, tornando-o mais minúsculo a cada medida que se ergue na escuridão que transborda de seus atos inescrupulosos.</p>
+        <p>Será que nascer para uma vida desprovida de verdades faz mais sentido do que viver à base da honra e da honestidade? O lado mau sempre foi, aos olhos do homem, o caminho mais fácil a se seguir, porém, um caminho de mão única pode significar que não terá mais volta.</p>
+        <p>A revolta não adianta quando a mentira se torna verdade; o amor não adianta quando a honestidade se vai graças à vaidade. Será vivida uma vida honesta aos olhos de uma sociedade desonesta, onde o errado pode ser o certo mesmo quando o certo nem sempre é o suficiente.</p>
+        <p>Aqui estão os puros e escolhidos! Eles podem ser fracos por fora e muitas vezes se sentirem insuficientes, mas a verdade que os sustenta é mais suficiente do que qualquer mentira contada.</p>
+        <div class="buttons">
+            <button onclick="navigateTo('capitulo3.html')">Anterior</button>
+            <button onclick="navigateTo('indice.html')">Índice</button>
+            <button onclick="navigateTo('capitulo5.html')">Próximo</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
