@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 13</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script> <!-- Referência ao script.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(chapterId) {
+            localStorage.setItem("lastReadChapter", chapterId);
+            console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
+        }
+    </script>
+</head>
+<body>
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo13" -->
+    <div class="container capitulo" id="capitulo13">
+        <h1 class="chapter-number">Capítulo 13</h1>
+        <h2 class="chapter-title">22 de Janeiro de 2021</h2>
+        <p>O que não te mata te torna mais forte, mas mesmo assim o tempo te mata, e ele também pode te tornar forte ou fraco, dependendo do que planta em seu agora.</p>
+        <p>Embora não veja a rica beleza que habita em sua essência, você é e sempre foi o ser mais belo entre todos os seres; não permita que te apontem o dedo julgando o que você deve ou não fazer.</p>
+        <p>Pois a beleza do viver está em seu livre-arbítrio, mas não se iluda com a maldade do mundo, pois é nele que podemos perder o nosso brilho, assim como podemos brilhar mais ainda.</p>
+        <p>Faça o que puder, plante o que quiser plantar, mas lembre-se de garantir que o solo em que edifica sua casa é firme como uma rocha, para que não corra o risco de desmoronar no caos da perdição.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo12.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo14.html')">Próximo</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

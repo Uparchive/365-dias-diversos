@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 14</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script> <!-- Referência ao script.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(chapterId) {
+            localStorage.setItem("lastReadChapter", chapterId);
+            console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
+        }
+    </script>
+</head>
+<body>
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo14" -->
+    <div class="container capitulo" id="capitulo14">
+        <h1 class="chapter-number">Capítulo 14</h1>
+        <h2 class="chapter-title">23 de Janeiro de 2021</h2>
+        <p>Assim como o calor, também existe o frio; assim como a vida, também existe a morte, pois o bem vem primeiro, porém, o mal sempre é mais chamativo aos nossos olhos.</p>
+        <p>Assim como do mal pode sair o bem, do bem também pode sair o mal, porém, nenhum dos dois lados coabita com o outro.</p>
+        <p>Não se pode viver para os dois lados, assim como não é possível ver o sol escurecer a terra por si só. Apenas um caminho é aceitável, seja o bem ou o mal, e se possível algo pior.</p>
+        <p>A vida é feita de escolhas, e as escolhas geram caminhos, e só depende de nossos atos para determinarmos o nosso futuro.</p>
+        <p>Pois tudo que plantamos colhemos, assim como tudo que fazemos pagamos, seja o bem ou o mal, recebemos o que fizemos por merecer.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo13.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo15.html')">Próximo</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

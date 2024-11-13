@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 12</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script> <!-- Referência ao script.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(chapterId) {
+            localStorage.setItem("lastReadChapter", chapterId);
+            console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
+        }
+    </script>
+</head>
+<body>
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo12" -->
+    <div class="container capitulo" id="capitulo12">
+        <h1 class="chapter-number">Capítulo 12</h1>
+        <h2 class="chapter-title">21 de Janeiro de 2021</h2>
+        <p>Como na pureza de sua mocidade, onde a inocência habitava e o mal não existia para si, as coisas eram simples e simplesmente havia prazer a cada minuto de sua curta vida.</p>
+        <p>Sorria ao ver o sol nascer, e não chorava ao ver o sol se pôr; a felicidade habitava em seus dias, assim como a tristeza se faz presente na vida dos filhos da perdição.</p>
+        <p>Pois o erro persegue os que andam nas trevas, e maldito é todo o homem que despreza os justos e inveja o homem mau. Não existem caminhos pré-determinados, porquanto somos nós que escolhemos os nossos destinos com nossos próprios atos.</p>
+        <p>Porém, existe cegueira nos olhos de quem apenas enxerga o que pode ser visto com os próprios olhos, pois a verdade está oculta graças à mentira em que vivemos desde os primeiros dias da humanidade.</p>
+        <p>Deixe que o sal contamine a carne com os seus 5 minutos de prazer, mas não deixe que seu paladar te engane, te levando para o mesmo prato em que está a carne salgada de seu almoço.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo11.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo13.html')">Próximo</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

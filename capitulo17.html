@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 17</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script> <!-- Referência ao script.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(chapterId) {
+            localStorage.setItem("lastReadChapter", chapterId);
+            console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
+        }
+    </script>
+</head>
+<body>
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo17" -->
+    <div class="container capitulo" id="capitulo17">
+        <h1 class="chapter-number">Capítulo 17</h1>
+        <h2 class="chapter-title">26 de Janeiro de 2021</h2>
+        <p>Viva cada momento intensamente, seja inteligente e não se iluda com os prazeres momentâneos que o mundo oferece. Mesmo que o erro seja tentador, o caminho mais difícil é o que mais te fortalece.</p>
+        <p>A vida é feita de fases, e cada fase existe com o propósito de te testar ao máximo, e a cada degrau existe uma escolha, e a cada escolha tem uma consequência que te mostra onde você errou e onde acertou em sua decisão tomada.</p>
+        <p>O tempo é que nos mostra os resultados de nossos atos, então tome cuidado para não ser impulsivo e escolher errado o prato que come, para que não seja envenenado.</p>
+        <p>Aprenda com seus erros e não deixe eles te consumirem; as cicatrizes te mostram o que você passou, mas não te dão a dor que um dia o tempo te fez sentir. Domine o seu tempo, aprenda com seus erros, e não seja dominado pelos fracassos do passado e pelos monstros de seus pesadelos.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo16.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo18.html')">Próximo</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

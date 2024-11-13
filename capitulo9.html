@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 9</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script> <!-- Referência ao script.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(chapterId) {
+            localStorage.setItem("lastReadChapter", chapterId);
+            console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
+        }
+    </script>
+</head>
+<body>
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo9" -->
+    <div class="container capitulo" id="capitulo9">
+        <h1 class="chapter-number">Capítulo 9</h1>
+        <h2 class="chapter-title">18 de Janeiro de 2021</h2>
+        <p>Nossa livre escolha é isolada nas leis impostas pelo governador do mundo, enquanto a livre fala é manipulada pela audição do público, e assim percebemos ser escravos no último segundo.</p>
+        <p>Não se prive para as coisas superficiais; apenas viva sua vida como nenhuma outra viveu, e faça diferente em um mundo igualitário, onde as pessoas pregam a igualdade, mas mesmo assim a desigualdade vive e impera para sempre. Seja único em lugares diferentes, onde o justo é injusto na mão de quem está no controle do jogo.</p>
+        <p>A vida não pode ser vivida quando sufocamos a nós mesmos e nos enganamos com as mentiras contadas. A verdade não é o suficiente em uma sociedade que vive e está acostumada a viver na mentira.</p>
+        <p>Não se limite e seja um ser ilimitado, iluminado de bênçãos para dar e para receber, de vida para chorar, sorrir e viver, e de bondade para os que ainda necessitam de alguém. Apenas seja você em um mundo em que ser você é um crime, e se for um crime ser nós mesmos, então seremos hoje, e eternamente, os criminosos que sempre devemos ser.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo8.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo10.html')">Próximo</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

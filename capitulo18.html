@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 18</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script> <!-- Referência ao script.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(chapterId) {
+            localStorage.setItem("lastReadChapter", chapterId);
+            console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
+        }
+    </script>
+</head>
+<body>
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo18" -->
+    <div class="container capitulo" id="capitulo18">
+        <h1 class="chapter-number">Capítulo 18</h1>
+        <h2 class="chapter-title">27 de Janeiro de 2021</h2>
+        <p>Como se uma brisa leve batesse pela manhã nas janelas de seu quarto, te acordando cedo como se tivesse te chamando para um café da manhã.</p>
+        <p>Movendo o seu sono ao seu despertar e te acordando para mais um dia de luta e fé, pois a fé move montanhas e realiza o impossível. E é graças ao acreditar em um novo dia que essa mesma brisa que bateu em sua janela te acordou para um novo amanhã.</p>
+        <p>Um amanhã de muitos outros hojes, outro nascer do sol para muitos outros nasceres de lua, como se a vida fosse recomeçar se refazendo do seu afeto e de sua crença por um novo dia.</p>
+        <p>Acreditar te leva a crer, a exercer a mesma fé que um dia sonhou em ter, a reforçar os muros fracos, a revirar montanhas grandes, a escalar grandes paredes que ainda insistem em nos conter.</p>
+        <p>Viver apenas o seu presente, mesmo que seja sobreviver, nascer de novo em um novo dia já vale muito o agradecer.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo17.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo19.html')">Próximo</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

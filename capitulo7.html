@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 7</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script> <!-- Referência ao script.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(chapterId) {
+            localStorage.setItem("lastReadChapter", chapterId);
+            console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
+        }
+    </script>
+</head>
+<body>
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo7" -->
+    <div class="container capitulo" id="capitulo7">
+        <h1 class="chapter-number">Capítulo 7</h1>
+        <h2 class="chapter-title">16 de Janeiro de 2021</h2>
+        <p>Em estado de choque, um espírito alegre se vai com a tristeza que dentro de si se transforma a cada minuto do dia, não deixando dúvidas de que a triste realidade é o que mais abala o seu estado. Mas mesmo assim, perguntam por que é que está assim.</p>
+        <p>Cinza, como algo sem vida que contamina a cor da natureza que brilha, de dentro para fora de seu espírito inconsolado, em que as raízes do tempo cicatrizaram uma marca incurável, que mostra o quanto as algemas do passado te machucaram.</p>
+        <p>E assim a cor do tempo mostra o seu real estado de espírito, parado e congelado para as coisas pesadas do passado, que o fazem chorar a todo instante em uma fração de segundo de um tempo de trevas.</p>
+        <p>E enfim, quando se vai a lua em sua noite de glória, nasce o brilho que tanto esperava, e a cor da juventude brilha como nunca tinha brilhado, cicatrizando algo incurável, que o passado tocou com seus dedos pesados.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo6.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo8.html')">Próximo</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

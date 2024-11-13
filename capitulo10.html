@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 10</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script> <!-- Referência ao script.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(chapterId) {
+            localStorage.setItem("lastReadChapter", chapterId);
+            console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
+        }
+    </script>
+</head>
+<body>
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo10" -->
+    <div class="container capitulo" id="capitulo10">
+        <h1 class="chapter-number">Capítulo 10</h1>
+        <h2 class="chapter-title">19 de Janeiro de 2021</h2>
+        <p>Mais uma vez andando pelo vale do tempo, procurando respostas em um canto onde não há, insistindo em ouvir uma palavra que o tempo não disse em um passado distante.</p>
+        <p>Como se no passado os atos futuros ainda se refletissem nele, nos fazendo reviver o que já foi vivido em um momento de refúgio de nosso próprio presente, onde o sorriso já não é mais o mesmo, onde as pessoas já não são mais as mesmas, e onde o mundo está literalmente diferente do que estava há uns três anos atrás.</p>
+        <p>Quando éramos o que não somos hoje, uma mistura de infantilidade com malícia, em uma inocência de quem não é inocente, quando ríamos do que podíamos, sem tempo ruim e sem preguiça, em um clima agradavelmente quente.</p>
+        <p>Aprenda que trazer o passado para o presente só deixa tudo que está ruim pior ainda, e viver o seu futuro em seu presente te trará frutos dignos em sua longa vida.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo9.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo11.html')">Próximo</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

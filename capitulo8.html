@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 8</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script> <!-- Referência ao script.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(chapterId) {
+            localStorage.setItem("lastReadChapter", chapterId);
+            console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
+        }
+    </script>
+</head>
+<body>
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo8" -->
+    <div class="container capitulo" id="capitulo8">
+        <h1 class="chapter-number">Capítulo 8</h1>
+        <h2 class="chapter-title">17 de Janeiro de 2021</h2>
+        <p>A vida é uma escola e vivemos em constante aprendizado. Aprendemos que os obstáculos podem ser grandes e a luta pode dar trabalho, mas mesmo assim, com a caminhada, percebemos que tudo pode ser superado.</p>
+        <p>Às vezes pode ser difícil lidar com a pressão que te prende no nervosismo material, mas aprendemos com a diversidade que estar nervoso não adianta nada, que o tempo pode estar nublado, mas cabe a nós fazermos de cada dia o melhor que podemos fazer.</p>
+        <p>Em uma sala vazia, ouvindo ecos do seu próprio som que não te leva a lugar nenhum, acreditando que o seu grito vai expurgar tudo, eliminando toda podridão que vem de fora para dentro, exalando de dentro para fora.</p>
+        <p>Assim percebemos na guerra que dar valor à paz é o mais importante de tudo, como a vida nos ensinando a cada dia em uma tempestade contínua, que o superar vem depois do encarar. E assim encaramos nossas diversidades, mostrando para nós mesmos que somos capazes de lidar com nossos demônios, nos tornando mais fortes a cada luta superada.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo7.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo9.html')">Próximo</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

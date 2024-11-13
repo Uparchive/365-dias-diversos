@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 11</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script> <!-- Referência ao script.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(chapterId) {
+            localStorage.setItem("lastReadChapter", chapterId);
+            console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
+        }
+    </script>
+</head>
+<body>
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo11" -->
+    <div class="container capitulo" id="capitulo11">
+        <h1 class="chapter-number">Capítulo 11</h1>
+        <h2 class="chapter-title">20 de Janeiro de 2021</h2>
+        <p>A nossa vitalidade importa apenas quando damos valor para as coisas gratificantes, não doando o nosso tempo à toa, e se afastando de tudo que diz respeito à vida alheia.</p>
+        <p>Quando damos valor para algo que ninguém dá a mínima importância, passamos a ser humildes seres de fé, que exercem sua fé dia e noite. Quando pegamos o projeto falido de nossas vidas, acreditando que ele se erguerá novamente, exercemos a nossa pequena fé até ela se tornar gigante.</p>
+        <p>Acredite e lute por aquilo que acredita, mesmo quando ninguém está dando a mínima, não fazendo nem um pingo de esforço para te dar moral. Respire e pense, antes de tomar uma decisão repentina que só te trará prejuízos.</p>
+        <p>Precisamos dos próximos, assim como os próximos precisam de nós, então sejamos humildes e aliados uns dos outros. Mas não acredite demais em alguém que só está por interesses, querendo dar o bote no final.</p>
+        <p>Aprendemos a dar com uma mão escondendo a outra, pois somente assim seremos verdadeiramente recompensados por aquele que tudo pode. Em um dia estamos com tudo e no outro podemos estar com nada, então não pise hoje em alguém para que amanhã não seja pisado da mesma maneira.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo10.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo12.html')">Próximo</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

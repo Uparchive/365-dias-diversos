@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 6</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script> <!-- Referência ao script.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(chapterId) {
+            localStorage.setItem("lastReadChapter", chapterId);
+            console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
+        }
+    </script>
+</head>
+<body>
+<!-- Identificação do capítulo com classe "capitulo" e id "capitulo" -->
+<div class="container capitulo" id="capitulo6">
+    <h1 class="chapter-number">Capítulo 6</h1>
+    <h2 class="chapter-title">15 de Janeiro de 2021</h2>
+    <p>É na simplicidade que encontramos um motivo bom para continuar, pois não há nada no mundo mais gratificante do que fazer com amor o bem ao próximo, e fazer de bom grado aquilo que ama.</p>
+    <p>A rua vazia te mostra que o caminho é longo, mas nem por isso você vai parar, ou talvez pare, aceitando um fato mentiroso que o mundo outrora contou para você, te fazendo desacreditar de si mesmo e de sua capacidade, com as mentiras que te contaram a vida inteira.</p>
+    <p>Nem sempre temos que olhar positivamente para as coisas afrontosas, que vêm nos afrontando cada vez mais com os nossos erros do passado, nos deixando mais inquietos a cada vez que nos dizem que não somos o suficiente, porque o mundo quis assim.</p>
+    <p>Quem entende o sentimento humano? Doce sentimento amargo, misturado com a graça de quem sorri falsamente para certas afrontas do tentador. Quem entende o sentimento desumano? Que derrama o sangue de quem te afronta, não deixando rastros do certo, do justo, do reto e do amor.</p>
+    <div class="buttons">
+        <button class="previous" onclick="navigateTo('capitulo5.html')">Anterior</button>
+        <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+        <button class="next" onclick="navigateTo('capitulo7.html')">Próximo</button>
+    </div>
+</div>
+    <script>
+        function navigateTo(url) {
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
