@@ -15,22 +15,21 @@
         });
 
         // Função para salvar o capítulo atual no localStorage
-        function setLastRead(capituloId) {
-            localStorage.setItem("lastReadChapter", capituloId);
-            console.log("Capítulo salvo no localStorage:", capituloId); // Log para debug
+        function setLastRead(chapterId) {
+            localStorage.setItem("lastReadChapter", chapterId);
+            console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
         }
     </script>
 </head>
 <body>
-    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo3" -->
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo2" -->
     <div class="container capitulo" id="capitulo3">
-        <h1 class="capitulo-number">Capítulo 3</h1>
-        <h2 class="capitulo-title">12 de Janeiro de 2021</h2>
+        <h1 class="chapter-number">Capítulo 3</h1>
+        <h2 class="chapter-title">12 de Janeiro de 2021</h2>
         <p>Como se algo antigo e profano entrasse na sua mente, não te dizendo para onde ir, mas sim para onde não deve ir, te levando para o mesmo canto sombrio do seu passado intocado.</p>
         <p>Como a casa junto ao lago, onde habitam os seus fantasmas do passado, que ainda te assombram assim como assombraram uma criança alegre de um passado perturbado.</p>
         <p>Sorrisos dizem para os falsos, em corrupto estado, que a nossa falsa felicidade traz desejos ocultos para os incapacitados, os em corrupto estado, que tomam aos olhos os bravos presentes, que em medalhas trouxeram os nossos problemas passados.</p>
         <p>Conquistas de lado, levando junto ao tempo as lágrimas de seu presente cruel, onde o suficiente se torna insuficiente suportando apenas as dores de um caos infindável. Como tesouros marcados, com o sangue de seus aliados, que outrora viveram apenas para os incapacitados, que não puderam por si conquistar o que já estava conquistado.</p>
-        <p>E o outro lado, doce ou salgado, quente ou frio, amoroso ou entrevado, só sabendo quem morreu ao lado dos seus anteriores aliados, que lutaram por tesouros fadados à condenação, como os tesouros marcados.</p>
         <div class="buttons">
             <div class="buttons">
                 <button class="previous" onclick="navigateTo('capitulo2.html')">Anterior</button>
