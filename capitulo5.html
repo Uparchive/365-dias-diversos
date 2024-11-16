@@ -53,19 +53,10 @@
         <p>Nascer de novo não significa apenas uma nova vida, mas a oportunidade de fazer na mesma vida uma história diferente. Há aqueles que se deixam ir junto à maré agitada de uma tempestade sem fim, em um labirinto sem volta que teimam em se perder, e dão voltas e voltas sem achar seu ponto final. E há os que ainda acreditam no bem e na justiça, e usam o seu Deus como justificativa de suas causas perdidas.</p>
         <p>Esses, sim, ainda podem olhar para o céu com esperança, de um tempo onde jamais houve, de uma vida onde jamais teve, de uma graça onde a tristeza não alcança. E assim como em contos de fadas, eles sempre terão fé no seu final feliz, não descansam para não fraquejar, até o verbo fechar o livro com “felizes para sempre”, e fim.</p>
         <div class="buttons">
-            <div class="buttons">
-                <button class="previous" onclick="navigateTo('capitulo4.html')">Anterior</button>
-                <button class="index" onclick="navigateTo('indice.html')">Índice</button>
-                <button class="next" onclick="navigateTo('capitulo6.html')">Próximo</button>
-            </div>            
+            <button class="previous" onclick="navigateTo('capitulo4.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo6.html')">Próximo</button>
         </div>
     </div>
-    <script>
-        function navigateTo(url) {
-            const currentChapterId = document.querySelector(".capitulo").id;
-            setLastRead(currentChapterId);
-            window.location.href = url;
-        }
-    </script>
 </body>
 </html>

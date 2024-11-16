@@ -53,19 +53,10 @@
         <p>Sorrisos dizem para os falsos, em corrupto estado, que a nossa falsa felicidade traz desejos ocultos para os incapacitados, os em corrupto estado, que tomam aos olhos os bravos presentes, que em medalhas trouxeram os nossos problemas passados.</p>
         <p>Conquistas de lado, levando junto ao tempo as lágrimas de seu presente cruel, onde o suficiente se torna insuficiente suportando apenas as dores de um caos infindável. Como tesouros marcados, com o sangue de seus aliados, que outrora viveram apenas para os incapacitados, que não puderam por si conquistar o que já estava conquistado.</p>
         <div class="buttons">
-            <div class="buttons">
-                <button class="previous" onclick="navigateTo('capitulo2.html')">Anterior</button>
-                <button class="index" onclick="navigateTo('indice.html')">Índice</button>
-                <button class="next" onclick="navigateTo('capitulo4.html')">Próximo</button>
-            </div>            
+            <button class="previous" onclick="navigateTo('capitulo2.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo4.html')">Próximo</button>
         </div>
     </div>
-    <script>
-        function navigateTo(url) {
-            const currentChapterId = document.querySelector(".capitulo").id;
-            setLastRead(currentChapterId);
-            window.location.href = url;
-        }
-    </script>
 </body>
 </html>
