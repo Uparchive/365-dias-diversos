@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentPage = 0;
 
     // Recupera o último capítulo lido do localStorage
-    const lastReadChapter = localStorage.getItem("diariodeomega");
+    const lastReadChapter = localStorage.getItem("365-dias-diversos");
     if (lastReadChapter && !isNaN(parseInt(lastReadChapter))) {
         currentPage = parseInt(lastReadChapter);
         // Aplica a classe 'flip' nas páginas anteriores ao último capítulo lido
