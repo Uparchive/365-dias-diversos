@@ -8,7 +8,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Identifique o livro atual (por exemplo, usando um atributo data no body)
-            const currentBook = document.body.dataset.bookId || "365diasdiversos"; // Exemplo: 'NomeDoSeuLivro'
+            const currentBook = document.body.dataset.bookId || "365-dias-diversos"; // Exemplo: 'NomeDoSeuLivro'
 
             // Função para obter o nome do armazenamento local com base no livro
             function getStorageKey() {
@@ -38,7 +38,7 @@
         }
     </script> 
 </head>
-<body data-book-id="365diasdiversos">
+<body data-book-id="365-dias-diversos">
     <div class="container">
         <a href="indice.html">
             <img src="https://firebasestorage.googleapis.com/v0/b/armazene-acd30.appspot.com/o/uploads%2Fz0wQUWxFhKRBeMLIHIjOHd1dpHn2%2F365%20Dias%20Diversos.png?alt=media&token=a00968f4-7285-479f-a202-0e4928f0e835" alt="Capa do livro 365 Dias Diversos" class="book-cover">
