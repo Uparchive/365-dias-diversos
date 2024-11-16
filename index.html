@@ -7,15 +7,23 @@
     <link rel="stylesheet" href="capastyle.css">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Identifique o livro atual (por exemplo, usando um atributo data no body)
+            const currentBook = document.body.dataset.bookId || "365-dias-diversos"; // Exemplo: 'NomeDoSeuLivro'
+
+            // Função para obter o nome do armazenamento local com base no livro
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
             // Verifica se há um último capítulo lido no localStorage
-            const lastReadChapter = localStorage.getItem("lastReadChapter");
+            const lastReadChapter = localStorage.getItem(getStorageKey());
             const continueButton = document.getElementById("continue-button");
 
             if (lastReadChapter) {
-        // Se houver um último capítulo lido, mostra "Continuar Leitura" e redireciona para o arquivo correto do capítulo
-        continueButton.textContent = "Continuar Leitura";
-        continueButton.href = `${lastReadChapter}.html`; // Redireciona para o arquivo HTML do último capítulo lido
-             } else {
+                // Se houver um último capítulo lido, mostra "Continuar Leitura" e redireciona para o arquivo correto do capítulo
+                continueButton.textContent = "Continuar Leitura";
+                continueButton.href = `${lastReadChapter}.html`; // Redireciona para o arquivo HTML do último capítulo lido
+            } else {
                 // Se não houver, mostra "Iniciar Leitura" e redireciona para o Capítulo 1
                 continueButton.textContent = "Iniciar Leitura";
                 continueButton.href = "capitulo1.html"; // Redireciona para o Capítulo 1
@@ -24,11 +32,13 @@
 
         // Função para salvar o capítulo atual no localStorage
         function setLastRead(chapterId) {
-            localStorage.setItem("lastReadChapter", chapterId);
+            const currentBook = document.body.dataset.bookId || "defaultBook"; // Exemplo: 'diariodeomega'
+            const storageKey = `${currentBook}_lastReadChapter`;
+            localStorage.setItem(storageKey, chapterId);
         }
-    </script>    
+    </script> 
 </head>
-<body>
+<body data-book-id="365-dias-diversos">
     <div class="container">
         <a href="indice.html">
             <img src="https://firebasestorage.googleapis.com/v0/b/armazene-acd30.appspot.com/o/uploads%2Fz0wQUWxFhKRBeMLIHIjOHd1dpHn2%2F365%20Dias%20Diversos.png?alt=media&token=a00968f4-7285-479f-a202-0e4928f0e835" alt="Capa do livro 365 Dias Diversos" class="book-cover">
