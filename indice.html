@@ -9,8 +9,16 @@
     <script src="script.js" defer></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Identifique o livro atual (por exemplo, usando um atributo data no body)
+            const currentBook = document.body.dataset.bookId || "365-dias-diversos"; // Exemplo: 'NomeDoSeuLivro'
+
+            // Função para obter o nome do armazenamento local com base no livro
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
             // Recupera o último capítulo lido do localStorage
-            const lastReadChapter = localStorage.getItem("lastReadChapter");
+            const lastReadChapter = localStorage.getItem(getStorageKey());
             console.log("Último capítulo lido recuperado do localStorage:", lastReadChapter); // Log para debug
 
             // Se houver um capítulo salvo no localStorage
@@ -31,7 +39,9 @@
 
         // Função para salvar o capítulo atual no localStorage ao clicar
         function setLastRead(chapterId) {
-            localStorage.setItem("lastReadChapter", chapterId);
+            const currentBook = document.body.dataset.bookId || "defaultBook"; // Exemplo: 'diariodeomega'
+            const storageKey = `${currentBook}_lastReadChapter`;
+            localStorage.setItem(storageKey, chapterId);
             console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
         }
     </script>
